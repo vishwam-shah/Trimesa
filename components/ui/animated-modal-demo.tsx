@@ -104,7 +104,14 @@ function ModalInnerContent({ images }: { images: string[] }) {
           ))
         ) : (
           <div className="w-full h-150">
-            <InlineWidget url="https://calendly.com/vishwamshah007/discovery-call?month=2025-12" />
+            <InlineWidget
+              url="https://calendly.com/vishwamshah007/discovery-call?month=2025-12"
+              pageSettings={{
+                backgroundColor: "#1a1a1a",
+                textColor: "#ffffff",
+                primaryColor: "#6366f1"
+              }}
+            />
           </div>
         )}
       </div>

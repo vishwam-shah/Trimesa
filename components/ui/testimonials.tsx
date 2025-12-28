@@ -1,45 +1,27 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/ui/marquee";
 
 const reviews = [
   {
-    name: "Jack",
-    username: "@jack",
+    name: "Siddhant M.",
+    username: "@siddhantmehta02",
     body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: "https://avatar.vercel.sh/jack",
+    img: "/testimonial/Siddhant_01.JPG",
   },
   {
-    name: "Jill",
-    username: "@jill",
+    name: "Vishwam S.",
+    username: "@vishwamshah07",
     body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: "https://avatar.vercel.sh/jill",
+    img: "/testimonial/vishwam_01.jpeg",
   },
   {
-    name: "John",
-    username: "@john",
+    name: "Jay T.",
+    username: "@jaytreivedi06",
     body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/john",
-  },
-  {
-    name: "Jane",
-    username: "@jane",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jane",
-  },
-  {
-    name: "Jenny",
-    username: "@jenny",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jenny",
-  },
-  {
-    name: "James",
-    username: "@james",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/james",
+    img: "/testimonial/jay_01.jpg",
   },
 ];
 
@@ -68,7 +50,16 @@ const ReviewCard = ({
       )}
     >
       <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="32" height="32" alt="" src={img} />
+        <div className="w-10 h-10 relative shrink-0">
+          <Image
+            src={img}
+            alt={`Profile picture of ${name}`}
+            fill
+            className="rounded-full object-cover"
+            sizes="40px"
+            priority
+          />
+        </div>
         <div className="flex flex-col">
           <figcaption className="text-sm font-medium dark:text-white">
             {name}
@@ -81,32 +72,37 @@ const ReviewCard = ({
   );
 };
 
+import CoFounderSection from "@/components/ui/co-founder";
+
 export default function Testimonials() {
   return (
-    <section className="relative w-full py-20 bg-background">
-      <div className="mx-auto max-w-5xl mb-12 text-center px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-          What Our Customers Say
-        </h2>
-        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          Join thousands of satisfied users who have transformed their workflow
-        </p>
-      </div>
+    <>
+      <section className="relative w-full py-20 bg-background">
+        <div className="mx-auto max-w-5xl mb-12 text-center px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            What Our Customers Say
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Join thousands of satisfied users who have transformed their workflow
+          </p>
+        </div>
 
-      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-        <Marquee pauseOnHover className="[--duration:20s]">
-          {firstRow.map((review) => (
-            <ReviewCard key={review.username} {...review} />
-          ))}
-        </Marquee>
-        <Marquee reverse pauseOnHover className="[--duration:20s]">
-          {secondRow.map((review) => (
-            <ReviewCard key={review.username} {...review} />
-          ))}
-        </Marquee>
-        <div className="from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-linear-to-r"></div>
-        <div className="from-background pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-linear-to-l"></div>
-      </div>
-    </section>
+        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+          <Marquee pauseOnHover className="[--duration:20s]">
+            {firstRow.map((review) => (
+              <ReviewCard key={review.username} {...review} />
+            ))}
+          </Marquee>
+          <Marquee reverse pauseOnHover className="[--duration:20s]">
+            {secondRow.map((review) => (
+              <ReviewCard key={review.username} {...review} />
+            ))}
+          </Marquee>
+          <div className="from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-linear-to-r"></div>
+          <div className="from-background pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-linear-to-l"></div>
+        </div>
+      </section>
+      <CoFounderSection />
+    </>
   );
 }

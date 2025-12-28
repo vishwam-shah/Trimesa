@@ -98,12 +98,7 @@ function HeroCta({ label }: { label: string }) {
 
   return (
     <RainbowButton
-      onClick={() => {
-        // toggle dark mode
-        document.documentElement.classList.toggle("dark")
-        // open modal
-        setOpen(true)
-      }}
+      onClick={() => setOpen(true)}
       className="px-10 py-6 text-base md:text-lg font-semibold h-14 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
     >
       {label}
