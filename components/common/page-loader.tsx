@@ -3,7 +3,6 @@
 import { EncryptedText } from "@/components/ui/encrypted-text";
 import React, { useEffect, useRef, useSyncExternalStore } from "react";
 
-// Subscribe to sessionStorage for loader state
 const loaderStore = {
   hasVisited: false,
   listeners: new Set<() => void>(),
@@ -13,7 +12,7 @@ const loaderStore = {
   },
 
   getServerSnapshot() {
-    return true; // Server assumes visited (no loader)
+    return true;
   },
 
   subscribe(listener: () => void) {
@@ -33,7 +32,6 @@ const loaderStore = {
   },
 };
 
-// Initialize on module load (client-side only)
 if (typeof window !== "undefined") {
   loaderStore.initialize();
 }
@@ -78,7 +76,7 @@ function LoaderOverlay({ onComplete }: { onComplete: () => void }) {
   );
 }
 
-export default function HomeLoader({ children }: { children: React.ReactNode }) {
+export function PageLoader({ children }: { children: React.ReactNode }) {
   const hasVisited = useHasVisited();
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -89,7 +87,6 @@ export default function HomeLoader({ children }: { children: React.ReactNode }) 
     }
   }, []);
 
-  // Clear flag on page unload so it shows again on refresh
   useEffect(() => {
     const handleBeforeUnload = () => {
       sessionStorage.removeItem("home-visited");
@@ -115,3 +112,5 @@ export default function HomeLoader({ children }: { children: React.ReactNode }) 
     </>
   );
 }
+
+export default PageLoader;

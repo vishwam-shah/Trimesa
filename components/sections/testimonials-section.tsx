@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/ui/marquee";
+import { ProfileCard } from "@/components/ui/profile-card";
 
 const reviews = [
   {
@@ -43,9 +44,7 @@ const ReviewCard = ({
     <figure
       className={cn(
         "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
-        // light styles
         "border-gray-950/10 bg-gray-950/10 hover:bg-gray-950/5",
-        // dark styles
         "dark:border-gray-50/5 dark:bg-gray-50/10 dark:hover:bg-gray-50/15"
       )}
     >
@@ -72,9 +71,47 @@ const ReviewCard = ({
   );
 };
 
-import CoFounderSection from "@/components/ui/co-founder";
+const IndianFlag = (
+  <svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="28" height="20" rx="2" fill="#fff"/>
+    <rect y="0" width="28" height="6.67" fill="#FF9933"/>
+    <rect y="13.33" width="28" height="6.67" fill="#138808"/>
+    <circle cx="14" cy="10" r="2.2" stroke="#000088" strokeWidth="0.8" fill="#fff"/>
+    <circle cx="14" cy="10" r="1.2" fill="#000088"/>
+  </svg>
+);
 
-export default function Testimonials() {
+const coFounders = [
+  {
+    imageUrl: "/testimonial/Siddhant_01.JPG",
+    location: "Siddhant Mehta",
+    flag: IndianFlag,
+    stats: "Co-Founder",
+    desc: "Lead Software Engineer",
+    href: "#",
+    themeColor: "150 50% 25%",
+  },
+  {
+    imageUrl: "/testimonial/vishwam_01.jpeg",
+    location: "Vishwam Shah",
+    flag: IndianFlag,
+    stats: "Co-Founder",
+    desc: "AI Developer",
+    href: "#",
+    themeColor: "250 50% 30%",
+  },
+  {
+    imageUrl: "/testimonial/Jay_01.jpg",
+    location: "Jay Trivedi",
+    flag: IndianFlag,
+    stats: "Co-Founder",
+    desc: "AI Researcher",
+    href: "#",
+    themeColor: "30 70% 40%",
+  },
+];
+
+export function TestimonialsSection() {
   return (
     <>
       <section className="relative w-full py-20 bg-background">
@@ -102,7 +139,24 @@ export default function Testimonials() {
           <div className="from-background pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-linear-to-l"></div>
         </div>
       </section>
-      <CoFounderSection />
+
+      {/* Co-Founders Section */}
+      <section className="w-full py-20 bg-background">
+        <div className="mx-auto max-w-5xl mb-12 text-center px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Meet Our Co-Founders
+          </h2>
+        </div>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 px-4">
+          {coFounders.map((founder) => (
+            <div key={founder.location} className="w-full max-w-[320px] h-112.5">
+              <ProfileCard {...founder} />
+            </div>
+          ))}
+        </div>
+      </section>
     </>
   );
 }
+
+export default TestimonialsSection;

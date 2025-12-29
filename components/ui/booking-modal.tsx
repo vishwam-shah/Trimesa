@@ -13,7 +13,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { InlineWidget } from "react-calendly";
 
-export function AnimatedModalDemo() {
+export function BookingModal() {
   const images = [
     "https://images.unsplash.com/photo-1517322048670-4fba75cbbb62?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=3425&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -119,4 +119,4 @@ function ModalInnerContent({ images }: { images: string[] }) {
   );
 }
 
-export default AnimatedModalDemo;
+export default BookingModal;

@@ -1,8 +1,7 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { ArrowRight } from "lucide-react";
 
-interface DestinationCardProps extends React.HTMLAttributes<HTMLDivElement> {
+interface ProfileCardProps extends React.HTMLAttributes<HTMLDivElement> {
   imageUrl: string;
   location: string;
   flag: React.ReactNode;
@@ -12,7 +11,7 @@ interface DestinationCardProps extends React.HTMLAttributes<HTMLDivElement> {
   desc?: string;
 }
 
-const DestinationCard = React.forwardRef<HTMLDivElement, DestinationCardProps>(
+const ProfileCard = React.forwardRef<HTMLDivElement, ProfileCardProps>(
   ({ className, imageUrl, location, flag, stats, href, themeColor, desc, ...props }, ref) => {
     return (
       <div
@@ -56,13 +55,12 @@ const DestinationCard = React.forwardRef<HTMLDivElement, DestinationCardProps>(
             {desc && (
               <p className="text-xs text-white/70 mt-1 font-normal">{desc}</p>
             )}
-            {/* Explore Now button removed as per request */}
           </div>
         </a>
       </div>
     );
   }
 );
-DestinationCard.displayName = "DestinationCard";
+ProfileCard.displayName = "ProfileCard";
 
-export { DestinationCard };
+export { ProfileCard };

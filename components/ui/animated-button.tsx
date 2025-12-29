@@ -11,7 +11,6 @@ export const BookCallButton = () => {
     <div className="hidden sm:block border-2 p-1 rounded-full border-dotted border-secondary cursor-pointer">
       <Button
         onClick={() => {
-          // ensure dark mode is enabled when booking
           if (!document.documentElement.classList.contains("dark")) {
             document.documentElement.classList.add("dark")
           }
