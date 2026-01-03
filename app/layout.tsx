@@ -4,6 +4,7 @@ import "./globals.css";
 import { Footer } from "@/components/layout/footer";
 import { ModalProvider } from "@/components/ui/animated-modal";
 import ModalRoot from "@/components/ui/modal-root";
+import { ChatbotWidget } from "@/components/ui/chatbot-widget";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -28,6 +29,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <ModalRoot />
+          <ChatbotWidget />
         </ModalProvider>
       </body>
     </html>
