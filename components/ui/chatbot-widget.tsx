@@ -120,7 +120,7 @@ export function ChatbotWidget({
           {!isOpen && (
             <motion.button
               onClick={() => setIsOpen(true)}
-              className="group relative w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center justify-center"
+              className="group relative w-16 h-16 bg-gradient-to-r from-purple-600 to-violet-600 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center justify-center"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               initial={{ opacity: 0, scale: 0 }}
@@ -140,7 +140,7 @@ export function ChatbotWidget({
               </motion.div>
 
               {/* Pulse Animation */}
-              <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 animate-ping opacity-75"></span>
+              <span className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 to-violet-600 animate-ping opacity-75"></span>
             </motion.button>
           )}
         </AnimatePresence>
@@ -157,7 +157,7 @@ export function ChatbotWidget({
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4 flex items-center justify-between">
+            <div className="bg-gradient-to-r from-purple-600 to-violet-600 text-white p-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
                   <Bot className="w-6 h-6" />
@@ -185,7 +185,7 @@ export function ChatbotWidget({
                 className={cn(
                   'flex-1 py-3 px-4 text-sm font-medium transition-colors flex items-center justify-center gap-2',
                   activeTab === 'conversation'
-                    ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400'
+                    ? 'text-purple-600 dark:text-purple-400 border-b-2 border-purple-600 dark:border-purple-400'
                     : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
                 )}
               >
@@ -197,7 +197,7 @@ export function ChatbotWidget({
                 className={cn(
                   'flex-1 py-3 px-4 text-sm font-medium transition-colors flex items-center justify-center gap-2',
                   activeTab === 'faqs'
-                    ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400'
+                    ? 'text-purple-600 dark:text-purple-400 border-b-2 border-purple-600 dark:border-purple-400'
                     : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
                 )}
               >
@@ -209,7 +209,7 @@ export function ChatbotWidget({
                 className={cn(
                   'flex-1 py-3 px-4 text-sm font-medium transition-colors flex items-center justify-center gap-2',
                   activeTab === 'articles'
-                    ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400'
+                    ? 'text-purple-600 dark:text-purple-400 border-b-2 border-purple-600 dark:border-purple-400'
                     : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
                 )}
               >
@@ -237,7 +237,7 @@ export function ChatbotWidget({
                     )}
                   >
                     {message.sender === 'bot' && (
-                      <div className="w-7 h-7 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center flex-shrink-0">
+                      <div className="w-7 h-7 rounded-full bg-gradient-to-r from-purple-600 to-violet-600 flex items-center justify-center flex-shrink-0">
                         <Bot className="w-4 h-4 text-white" />
                       </div>
                     )}
@@ -246,7 +246,7 @@ export function ChatbotWidget({
                       className={cn(
                         'max-w-[75%] rounded-2xl px-3 py-2 shadow-sm',
                         message.sender === 'user'
-                          ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-br-sm'
+                          ? 'bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-br-sm'
                           : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100 rounded-bl-sm'
                       )}
                     >
@@ -282,7 +282,7 @@ export function ChatbotWidget({
                   animate={{ opacity: 1, y: 0 }}
                   className="flex gap-2"
                 >
-                  <div className="w-7 h-7 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center flex-shrink-0">
+                  <div className="w-7 h-7 rounded-full bg-gradient-to-r from-purple-600 to-violet-600 flex items-center justify-center flex-shrink-0">
                     <Bot className="w-4 h-4 text-white" />
                   </div>
                   <div className="bg-white dark:bg-gray-700 rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm">
@@ -323,7 +323,7 @@ export function ChatbotWidget({
                 <Button
                   onClick={handleSend}
                   disabled={!inputValue.trim()}
-                  className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-4"
+                  className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white px-4"
                   size="sm"
                 >
                   <Send className="w-4 h-4" />
@@ -341,7 +341,7 @@ export function ChatbotWidget({
                   animate={{ opacity: 1, y: 0 }}
                   className="text-center p-8"
                 >
-                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
+                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-purple-600 to-violet-600 flex items-center justify-center">
                     <HelpCircle className="w-10 h-10 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">
@@ -365,7 +365,7 @@ export function ChatbotWidget({
                   animate={{ opacity: 1, y: 0 }}
                   className="text-center p-8"
                 >
-                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
+                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-purple-600 to-violet-600 flex items-center justify-center">
                     <FileText className="w-10 h-10 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">
