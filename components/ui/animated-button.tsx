@@ -17,7 +17,7 @@ export const BookCallButton = () => {
           setOpen(true)
         }}
         aria-label="Book a call"
-        className="relative w-25 h-25 rounded-full overflow-hidden p-0 grid place-content-center bg-purple-600 hover:bg-purple-700 text-white dark:bg-purple-600 dark:hover:bg-purple-700"
+        className="relative w-25 h-25 rounded-full overflow-hidden p-0 grid place-content-center bg-purple-600 hover:bg-purple-700 text-white dark:bg-purple-600 dark:hover:bg-purple-700 cursor-pointer"
       >
         <p
           className="absolute inset-0 animate-[text-rotation_8s_linear_infinite] text-white"
