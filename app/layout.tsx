@@ -15,6 +15,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Trimesha - Digital Solutions",
   description: "End-to-end digital solutions to transform your business",
+  icons: {
+    icon: "./favicon/favicon.ico",
+    apple: "./favicon/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
