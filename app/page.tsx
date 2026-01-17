@@ -1,7 +1,7 @@
 import { Header } from "@/components/layout/header";
 import { HeroSection } from "@/components/sections/hero-section";
 import { FeaturesSection } from "@/components/sections/features-section";
-import { TestimonialsSection } from "@/components/sections/testimonials-section";
+// import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { PageLoader } from "@/components/common/page-loader";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <FeaturesSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
     </PageLoader>
   );
 }
